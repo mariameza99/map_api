@@ -1,4 +1,4 @@
-const login = require("./UsuarioLogin");
+const login = require("./UserLogin");
 const isAuth = require("./UserIsAuth");
 module.exports = {
   login,

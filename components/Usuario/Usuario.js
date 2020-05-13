@@ -1,6 +1,6 @@
 
- const api = require("./UsuarioAPI");
- const dal = require("./UsuarioDAL");
+ const api = require("./UserAPI");
+ const dal = require("./UserDAL");
  const services = require("./Services");
  module.exports = {
    api,

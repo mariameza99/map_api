@@ -4,7 +4,7 @@
  * @param {string} data.email
  * @param {string} data.password
  */
-const dal = require("../UsuarioDAL");
+const dal = require("../UserDAL");
 const jwt = require("jsonwebtoken");
 const { verifyPassword, jwtConfig } = require("../../../libs/utils");
 module.exports = async ({ email, password }, res) => {
@@ -22,12 +22,12 @@ module.exports = async ({ email, password }, res) => {
     if (
       user &&
       user instanceof dal &&
-      verifyPassword(password, user.password)
+      verifyPassword(password, user.pass)
     ) {
       const token = jwt.sign(
         {
           id: user.id,
-          name: user.name,
+          fullname: user.fullname,
           email: user.email,
           birthday: user.birthday,
         },
@@ -43,7 +43,7 @@ module.exports = async ({ email, password }, res) => {
           data: {
             user: {
               id: user.id,
-              name: user.name,
+              fullname: user.fullname,
               email: user.email,
               birthday: user.birthday,
             },
