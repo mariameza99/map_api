@@ -5,8 +5,12 @@
  * @param {Object} data.password
  */
 
+const dal = require("../UserDAL");
+const { hashPassword } = require("../../../libs/utils");
+
 module.exports = ({fullName, email, password}, res) => {
     if (fullName && email && password) {
+      var password = hashPassword(password);
         dal.create({
             fullName,
             email,

@@ -17,6 +17,10 @@ User.post("/login", (req, res) => {
   services.login(req.body, res);
 });
 
+User.post("/register", (req, res) => {
+  services.register(req.body, res);
+});
+
 User.post("/isAuth", middleware, (req, res) => {
   services.isAuth(req, res);
 });
