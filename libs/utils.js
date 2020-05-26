@@ -5,7 +5,7 @@ module.exports = {
   /**
    * Esta función encripta contraseña
    * @param {String} password
-   *@returns {String} encripted password
+   * @returns {String} encripted password
    */
   hashPassword: (password) => bcrypt.hashSync(password, 10),
   /**

@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "nodemon App.js",
-    "undomigrations": "npx sequelize-cli db:migrate:undo:all",
+    "undoMigrations": "npx sequelize-cli db:migrate:undo:all",
     "migrations": "npx sequelize-cli db:migrate",
-    "remigrate": "npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate",
+    "remigrate": "npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "seedAll": "npx sequelize-cli db:seed:all"
   },
   "author": "Maria Concepcion Meza Manriquez",

@@ -9,7 +9,7 @@ const cors = require("cors");
 
 // Components
 const Place = require("./components/Place/Place");
-const Usuario = require("./components/Usuario/Usuario");
+const Usuario = require("./components/User/User");
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
@@ -20,13 +20,6 @@ app.use(cors());
 app.use("/lugares", Place.api);
 app.use("/usuarios", Usuario.api);
 
-/*
-console.log("---------------------------");
-console.log("---------------------------");
-console.log(Object.keys(Place.dal));
-console.log("---------------------------");
-console.log("---------------------------");
-*/
 
 app.listen(3000, () => {
   // Set up

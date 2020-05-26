@@ -1,21 +1,29 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Place = sequelize.define('Place', {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
+  const Place = sequelize.define(
+    'Place',
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      name: DataTypes.STRING,
+      lat: DataTypes.STRING,
+      long: DataTypes.STRING,
+      dir: DataTypes.TEXT,
+      color: DataTypes.STRING,
+      img: DataTypes.STRING,
+      rank: DataTypes.DOUBLE,
+      price: DataTypes.STRING,
+      cat: DataTypes.STRING,
+      desc: DataTypes.TEXT
     },
-    name: DataTypes.STRING,
-    address: DataTypes.STRING,
-    lat: DataTypes.STRING,
-    lang: DataTypes.STRING,
-    img: DataTypes.TEXT,
-    icon: DataTypes.TEXT
-  }, {});
+    {}
+  );
   Place.associate = function(models) {
     // belongsTo
-    Place.belongsTo(models.Usuario);
+    Place.belongsTo(models.User);
   };
   return Place;
 };

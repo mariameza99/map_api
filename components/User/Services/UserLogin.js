@@ -7,6 +7,7 @@
 const dal = require("../UserDAL");
 const jwt = require("jsonwebtoken");
 const { verifyPassword, jwtConfig } = require("../../../libs/utils");
+
 module.exports = async ({ email, password }, res) => {
   let status = 500;
   let response = {
@@ -29,7 +30,6 @@ module.exports = async ({ email, password }, res) => {
           id: user.id,
           fullname: user.fullname,
           email: user.email,
-          birthday: user.birthday,
         },
         jwtConfig.privateKey,
         {
@@ -45,7 +45,6 @@ module.exports = async ({ email, password }, res) => {
               id: user.id,
               fullname: user.fullname,
               email: user.email,
-              birthday: user.birthday,
             },
             token,
           },

@@ -1,4 +1,4 @@
 module.exports = {
-  privateKey: "n;s<4kScSW",
-  expiration: "7d",
+  privateKey: "SOLIDEX",
+  expiration: "2d",
 };

@@ -7,28 +7,31 @@
 const express = require("express");
 const cors = require("cors");
 const services = require("./Services");
+const middleware = require('../Middleware');
+
 const Place = express.Router();
+
 Place.use(express.urlencoded({ extended: false }));
 Place.use(express.json());
 Place.use(cors());
 
-Place.get("/", (req, res) => {
+Place.get("/", middleware, (req, res) => {
   res.status(200).json({
     message: "Metodo get"
   });
 });
 
-Place.post("/", (req, res) => {
-  services.create(req.body, res);
+Place.post("/", middleware, (req, res) => {
+    services.create(req.body,res);
 });
 
-Place.put("/", (req, res) => {
+Place.put("/", middleware,  (req, res) => {
   res.status(200).json({
     message: "Metodo post"
   });
 });
 
-Place.delete("/", (req, res) => {
+Place.delete("/", middleware, (req, res) => {
   res.status(200).json({
     message: "Metodo delete"
   });
