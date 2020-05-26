@@ -4,43 +4,55 @@ module.exports = {
     return queryInterface.createTable('Places', {
       id: {
         allowNull: false,
-        primaryKey: true,
         autoIncrement: true,
-        type: Sequelize.INTEGER
+        primaryKey: true,
+        type: Sequelize.INTEGER,
       },
       name: {
-        type: Sequelize.STRING
-      },
-      address: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       lat: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
-      lang: {
-        type: Sequelize.STRING
+      long: {
+        type: Sequelize.STRING,
+      },
+      dir: {
+        type: Sequelize.TEXT,
+      },
+      color: {
+        type: Sequelize.STRING,
       },
       img: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING,
       },
-      icon: {
-        type: Sequelize.TEXT
+      rank: {
+        type: Sequelize.DOUBLE,
+      },
+      price: {
+        type: Sequelize.STRING,
+      },
+      cat: {
+        type: Sequelize.STRING,
+      },
+      desc: {
+        type: Sequelize.TEXT,
       },
       userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-          model: "usuarios",
+          model: "users",
           key: "id",
-        },
+        }
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       }
     });
   },

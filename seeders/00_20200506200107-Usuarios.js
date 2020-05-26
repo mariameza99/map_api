@@ -2,18 +2,13 @@
 const { hashPassword } = require("../libs/utils");
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-      */
     return queryInterface.bulkInsert(
-      "usuarios",
+      "users",
       [
         {
           fullname: "Maria Meza",
           email: "maria@gmail.com",
-          pass: hashPassword("holamundo123"),
-          birthday: "1999-08-28",
+          password: hashPassword("holamundo123"),
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -22,6 +17,6 @@ module.exports = {
     );
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete("usuarios", null, {});
+    return queryInterface.bulkDelete("users", null, {});
   },
 };
