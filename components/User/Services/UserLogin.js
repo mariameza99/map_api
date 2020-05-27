@@ -23,7 +23,7 @@ module.exports = async ({ email, password }, res) => {
     if (
       user &&
       user instanceof dal &&
-      verifyPassword(password, user.pass)
+      verifyPassword(password, user.password)
     ) {
       const token = jwt.sign(
         {
