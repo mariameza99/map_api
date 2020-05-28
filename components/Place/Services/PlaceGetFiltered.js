@@ -1,33 +1,33 @@
 /**
- * Esta función solicita los lugares.
+ * Esta función solicita los lugares asignados a un usuario.
  * @param {string} search
  * 
  */
 
 const dal = require("../PlaceDAL");
-const {
-    Op
-} = require("sequelize");
+const { Op } = require("sequelize");
 
-module.exports = async ({search}, res) => {
-    let status = 200;
+module.exports = async ({ id }, res) => {
+    let status = 500;
     let response = {
         message: "Error al buscar lugares",
-        parameters: ["search"],
+        parameters: ["id"],
         data: [],
     };
 
-    console.log(search);
-
-    if (search) {
+    if (id) {
         const places = await dal.findAll({
             where: {
-                name: {
-                    [Op.like]: '%' + search + '%',
+                userId: {
+                    [Op.eq]: id
+                },
+                deleted: {
+                    [Op.eq]: 1
                 },
             },
         });
         if (places) {
+            console.log(places);
             status = 200;
             response = {
                 message: "Lugares encontrados",

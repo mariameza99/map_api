@@ -38,6 +38,10 @@ module.exports = {
       desc: {
         type: Sequelize.TEXT,
       },
+      deleted: {
+        type: Sequelize.INTEGER,
+        defaultValue: 1
+      },
       userId: {
         type: Sequelize.INTEGER,
         allowNull: false,

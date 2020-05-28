@@ -25,6 +25,7 @@ module.exports = async ({ email, password }, res) => {
       user instanceof dal &&
       verifyPassword(password, user.password)
     ) {
+      console.log("holi");
       const token = jwt.sign(
         {
           id: user.id,

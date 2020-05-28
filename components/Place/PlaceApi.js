@@ -15,24 +15,26 @@ Place.use(express.urlencoded({ extended: false }));
 Place.use(express.json());
 Place.use(cors());
 
-Place.get("/getplaces", middleware, (req, res) => {
-  services.getplaces(req.body,res);
+Place.get("/getplaces", (req, res) => {
+  services.getplaces(req.query,res);
+});
+
+Place.get("/getplacesFiltered", middleware, (req, res) => {
+  services.getplacesFiltered(req.query, res);
 });
 
 Place.post("/", middleware, (req, res) => {
     services.create(req.body,res);
 });
 
-Place.put("/", middleware,  (req, res) => {
-  res.status(200).json({
-    message: "Metodo post"
-  });
-});
+//Place.put("/delete", middleware,  (req, res) => {
+//  services.deleteplace(req.query,res);
+//});
 
-Place.delete("/", middleware, (req, res) => {
-  res.status(200).json({
-    message: "Metodo delete"
-  });
-});
+//Place.delete("/", middleware, (req, res) => {
+//  res.status(200).json({
+//    message: "Metodo delete"
+//  });
+//});
 
 module.exports = Place;

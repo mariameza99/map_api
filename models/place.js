@@ -17,7 +17,12 @@ module.exports = (sequelize, DataTypes) => {
       rank: DataTypes.DOUBLE,
       price: DataTypes.STRING,
       cat: DataTypes.STRING,
-      desc: DataTypes.TEXT
+      desc: DataTypes.TEXT,
+      deleted: {
+        type: DataTypes.INTEGER,
+        defaultValue: 1
+      }
+      
     },
     {}
   );
