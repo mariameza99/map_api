@@ -15,10 +15,8 @@ Place.use(express.urlencoded({ extended: false }));
 Place.use(express.json());
 Place.use(cors());
 
-Place.get("/", middleware, (req, res) => {
-  res.status(200).json({
-    message: "Metodo get"
-  });
+Place.get("/getplaces", middleware, (req, res) => {
+  services.getplaces(req.body,res);
 });
 
 Place.post("/", middleware, (req, res) => {

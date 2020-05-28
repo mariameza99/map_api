@@ -10,5 +10,6 @@ module.exports = (req, res, next) => {
     res.status(401).json({
       message: err,
     });
+    console.log("token error");
   }
 };
