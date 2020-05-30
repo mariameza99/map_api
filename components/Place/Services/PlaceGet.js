@@ -25,6 +25,9 @@ module.exports = async ({search}, res) => {
                 name: {
                     [Op.like]: '%' + search + '%',
                 },
+                deleted: {
+                    [Op.eq]: 1
+                },
             },
         });
         if (places) {
