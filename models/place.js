@@ -21,7 +21,8 @@ module.exports = (sequelize, DataTypes) => {
       deleted: {
         type: DataTypes.INTEGER,
         defaultValue: 1
-      }
+      },
+      userId: DataTypes.INTEGER,
       
     },
     {}

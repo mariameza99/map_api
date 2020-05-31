@@ -23,7 +23,7 @@ Place.get("/getplacesFiltered", middleware, (req, res) => {
   services.getplacesFiltered(req.query, res);
 });
 
-Place.post("/", middleware, (req, res) => {
+Place.post("/createPlace", middleware, (req, res) => {
     services.create(req.body,res);
 });
 
@@ -31,10 +31,9 @@ Place.put("/delete", middleware,  (req, res) => {
   services.deleteplace(req.body,res);
 });
 
-//Place.delete("/", middleware, (req, res) => {
-//  res.status(200).json({
-//    message: "Metodo delete"
-//  });
-//});
+Place.put("/updatePlace", middleware, (req, res) => {
+  services.updatePlace(req.body, res);
+});
+
 
 module.exports = Place;

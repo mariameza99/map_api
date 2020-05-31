@@ -14,7 +14,7 @@
 
 const dal = require("../PlaceDAL");
 
-module.exports = ({name, lat, long, dir, color, img, rank, price, cat, desc}, res) => {
+module.exports = ({name, lat, long, dir, color, img, rank, price, cat, desc,userId}, res) => {
     if (name && lat && long && dir && color && img && rank && price && cat && desc ) {
         dal.create({
             name,
@@ -26,7 +26,8 @@ module.exports = ({name, lat, long, dir, color, img, rank, price, cat, desc}, re
             rank,
             price,
             cat,
-            desc
+            desc,
+            userId,
         });
         res.status(200).json({
             message: "Lugar creado",
