@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       color: DataTypes.STRING,
       img: DataTypes.STRING,
       rank: DataTypes.DOUBLE,
-      price: DataTypes.STRING,
+      price: DataTypes.INTEGER,
       cat: DataTypes.STRING,
       desc: DataTypes.TEXT,
       deleted: {

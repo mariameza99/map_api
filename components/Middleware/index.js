@@ -3,6 +3,7 @@ const jwtConfig = require("../../libs/jwtConfig");
 
 module.exports = (req, res, next) => {
   try {
+    console.log(req.headers);
     const user = jwt.verify(req.headers["authorization"], jwtConfig.privateKey);
     req.userData = user;
     next();

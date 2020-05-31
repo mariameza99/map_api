@@ -7,7 +7,7 @@
 const dal = require("../PlaceDAL");
 const { Op } = require("sequelize");
 
-module.exports = async ({ id }, res) => {
+module.exports = async ({ id, search }, res) => {
     let status = 500;
     let response = {
         message: "Error al buscar lugares",
@@ -24,10 +24,12 @@ module.exports = async ({ id }, res) => {
                 deleted: {
                     [Op.eq]: 1
                 },
+                name: {
+                    [Op.like]: '%' + search + '%',
+                },
             },
         });
         if (places) {
-            console.log(places);
             status = 200;
             response = {
                 message: "Lugares encontrados",

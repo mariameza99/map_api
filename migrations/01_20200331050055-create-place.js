@@ -30,7 +30,7 @@ module.exports = {
         type: Sequelize.DOUBLE,
       },
       price: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       cat: {
         type: Sequelize.STRING,

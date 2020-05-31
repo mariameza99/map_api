@@ -27,9 +27,9 @@ Place.post("/", middleware, (req, res) => {
     services.create(req.body,res);
 });
 
-//Place.put("/delete", middleware,  (req, res) => {
-//  services.deleteplace(req.query,res);
-//});
+Place.put("/delete", middleware,  (req, res) => {
+  services.deleteplace(req.body,res);
+});
 
 //Place.delete("/", middleware, (req, res) => {
 //  res.status(200).json({
